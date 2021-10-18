@@ -14684,13 +14684,13 @@ text-box.side-image--unconstrained [data-content=side-image] {
   max-width: none
 }
 
-/* @media screen and (min-width:37.56255em) {
+@media screen and (min-width:37.56255em) {
 
   text-box,
   text-box:after {
     bottom: 2.5rem
   }
-} */
+}
 
 @media screen and (min-width:48em) {
   text-box {
