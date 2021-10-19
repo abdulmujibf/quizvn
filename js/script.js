@@ -83,6 +83,7 @@ monogatari.assets('scenes', {
 
 
 // Define the Characters
+// *Character
 monogatari.characters({
 	'mc': {
 		name: 'Ibu Harta',
@@ -90,7 +91,9 @@ monogatari.characters({
 		sprites: {
 			salam: "Salam.png",
 			kepo: "Kepo.png",
-			kuis: "Kuis.png"
+			kuis: "Kuis.png",
+			thanks: "TerimaKasih.png",
+			bye: "Bye.png"
 		}
 	}
 });
@@ -99,9 +102,9 @@ monogatari.script({
 	// The game starts here.
 	'Start': [
 		'show background class fadeIn',
-		'wait 1500',
+		'wait 2000',
 		'show character mc salam at left with slide-in',
-		"wait 1500",
+		"wait 2000",
 		"show character mc salam at left with breath",
 		// function () {
 		// 	const form = new FormData();
@@ -154,10 +157,10 @@ monogatari.script({
 	'Yes': [
 		"hide character mc salam with slide-out",
 		"wait 2000",
-		"show character mc kepo at left with slide-in",
+		"show character mc kepo at left with slide-up",
 		"wait 2000",
 		"show character mc kepo at left with breath",
-		'jump gender'
+		"jump gender"
 	],
 
 	'No': [
@@ -238,10 +241,6 @@ monogatari.script({
 
 	// *Age
 	'age': [
-		"hide character mc salam with fadeOut",
-		'wait 1500',
-		"show character mc kepo at left with fadeIn",
-		"wait 1000",
 		{
 			'Choice': {
 				'Dialog': 'mc Ibu Harta penasaran nih...  Sahabat Ibu Harta umurnya berapa? Silakan pilih dari pilihan ini ya! 😄',
@@ -822,10 +821,12 @@ monogatari.script({
 
 	// *GoToQuestion
 	"goToQuestion": [
-		"hide character mc kepo with fadeOut",
+		"hide character mc kepo with slide-down",
 		"wait 2000",
-		"show character mc kuis at right with fadeIn",
-		"wait 1500",
+		"show character mc kuis at right with slide-in-reverse",
+		"wait 2000",
+		"show character mc kuis at right with breath",
+		"wait 2000",
 		`mc Sebelum mulai pelatihannya, Ibu Harta mau adain kuis singkat untuk tahu seberapa Sahabat paham tentang topik yang akan dipelajari. Tolong jawab pertanyaan-pertanyaan ini dan tak perlu takut salah jawab. 📝
 		Buat jawab.`,
 		"mc Sahabat Sudah Siap ?!, Yuk Kita Mulai",
@@ -1101,13 +1102,19 @@ monogatari.script({
 
 	// *RecordData
 	'recordData': [
-		"Nama: {{player.name}}, Jenis Kelamin: {{player.gender}}, Umur: {{player.age}}",
-		"Provinsi: {{player.place}}, Kota / Kabupaten: {{player.kotaOrKabupaten}}, Kecamatan: {{player.kecamatan}}",
-		"Tipe usaha: {{player.tipeUsaha}}, Jenis Usaha: {{player.jenisUsaha}}, Lama Usaha: {{player.lamaUsaha}}",
-		"Pekerja: {{player.pekerja}}, Omset: {{player.omset}}, Nomor Telepon: {{player.phoneNumber}}",
-		"Nasabah: {{player.nasabah}}, Grup: {{player.grup}}",
-		"Question 1: {{player.pre_question_1}}, Question 2: {{player.pre_question_2}}, Question 3: {{player.pre_question_3}}",
-		"question4: {{player.pre_question_4}}, Question 5: {{player.pre_question_5}}",
+		"hide character mc kuis with slide-out-reverse",
+		"wait 2000",
+		"show character mc bye at center with slide-up",
+		"wait 2000",
+		`mc Terima kasih banyak ya sudah mau gabung di pelatihan bersama Ibu Harta. Semoga yang udah diajarkan bisa berguna ya, Sahabat {{player.name}}. Semoga sehat selalu dan sampai ketemu lagi!
+		😀🥰😆`,
+		// "Nama: {{player.name}}, Jenis Kelamin: {{player.gender}}, Umur: {{player.age}}",
+		// "Provinsi: {{player.place}}, Kota / Kabupaten: {{player.kotaOrKabupaten}}, Kecamatan: {{player.kecamatan}}",
+		// "Tipe usaha: {{player.tipeUsaha}}, Jenis Usaha: {{player.jenisUsaha}}, Lama Usaha: {{player.lamaUsaha}}",
+		// "Pekerja: {{player.pekerja}}, Omset: {{player.omset}}, Nomor Telepon: {{player.phoneNumber}}",
+		// "Nasabah: {{player.nasabah}}, Grup: {{player.grup}}",
+		// "Question 1: {{player.pre_question_1}}, Question 2: {{player.pre_question_2}}, Question 3: {{player.pre_question_3}}",
+		// "question4: {{player.pre_question_4}}, Question 5: {{player.pre_question_5}}",
 		function () {
 
 			// Destruct Object and Define Time

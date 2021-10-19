@@ -17,10 +17,16 @@
  * ===========================
 **/
 
+/**
+ * ===========================
+ * Animation
+ * ===========================
+ */
+
 .slide-in {
 	animation-name: ken-burns;
 	/* Name of the animation to use */
-	animation-duration: 1s;
+	animation-duration: 2s;
 	/* 1 if it should only move once */
 	animation-timing-function: ease;
 	animation-fill-mode: forwards;
@@ -41,10 +47,70 @@
 	}
 }
 
+.slide-in-reverse {
+	animation-name: slide-in-reverse;
+	/* Name of the animation to use */
+	animation-duration: 2s;
+	/* 1 if it should only move once */
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes slide-in-reverse {
+	0% {
+		transform: translateX(500px);
+		-webkit-transform: translateX(500px);
+		-moz-transform: translateX(500px);
+		-ms-transform: translateX(500px);
+		-o-transform: translateX(500px);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+.slide-out-reverse {
+	animation-name: slide-out-reverse;
+	/* Name of the animation to use */
+	animation-duration: 2s;
+	/* 1 if it should only move once */
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes slide-out-reverse {
+	0% {
+		transform: translateX(0px);
+		-webkit-transform: translateX(0px);
+		-moz-transform: translateX(0px);
+		-ms-transform: translateX(0px);
+		-o-transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(500px);
+		-webkit-transform: translateX(500px);
+		-moz-transform: translateX(500px);
+		-ms-transform: translateX(500px);
+		-o-transform: translateX(500px);
+	}
+}
+
 .slide-out {
 	animation-name: slide-rtls;
 	/* Name of the animation to use */
-	animation-duration: 1s;
+	animation-duration: 2s;
 	/* 1 if it should only move once */
 	animation-timing-function: ease;
 	animation-fill-mode: forwards;
@@ -73,6 +139,70 @@
 	}
 }
 
+.slide-up {
+	animation-name: slide-ups;
+	/* Name of the animation to use */
+	animation-duration: 2s;
+	/* 1 if it should only move once */
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes slide-ups {
+	0% {
+		transform: translateY(500px);
+		-webkit-transform: translateY(500px);
+		-moz-transform: translateY(500px);
+		-ms-transform: translateY(500px);
+		-o-transform: translateY(500px);
+	}
+
+	100% {
+		transform: translateY(0px);
+		-webkit-transform: translateY(00px);
+		-moz-transform: translateY(00px);
+		-ms-transform: translateY(00px);
+		-o-transform: translateY(00px);
+	}
+}
+
+.slide-down {
+	animation-name: slide-downs;
+	/* Name of the animation to use */
+	animation-duration: 2s;
+	/* 1 if it should only move once */
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes slide-downs {
+	0% {
+		transform: translateY(0px);
+		-webkit-transform: translateY(00px);
+		-moz-transform: translateY(00px);
+		-ms-transform: translateY(00px);
+		-o-transform: translateY(00px);
+	}
+
+	100% {
+		transform: translateY(500px);
+		-webkit-transform: translateY(500px);
+		-moz-transform: translateY(500px);
+		-ms-transform: translateY(500px);
+		-o-transform: translateY(500px);
+	}
+}
+
 .breath {
 	animation-name: breathe;
 	/* Name of the animation to use */
@@ -98,11 +228,11 @@
 	}
 
 	50% {
-		transform: translateY(-4px);
-		-webkit-transform: translateY(-4px);
-		-moz-transform: translateY(-4px);
-		-ms-transform: translateY(-4px);
-		-o-transform: translateY(-4px);
+		transform: translateY(-5px);
+		-webkit-transform: translateY(-5px);
+		-moz-transform: translateY(-5px);
+		-ms-transform: translateY(-5px);
+		-o-transform: translateY(-5px);
 	}
 
 	100% {
@@ -120,10 +250,22 @@ body {}
 /* Simple Button styles*/
 button {
 	margin: 5px;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 
 /* Simple Button Style on Hover */
-button:hover {}
+button:hover {
+	background-color: black;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
 
 /* General Styling for Menu Screens */
 [data-screen] {}
@@ -177,6 +319,10 @@ button:hover {}
 /* Choice Buttons style */
 [data-component="choice-container"] button {
 	margin: 0 8px;
+	background-color: rgba(255, 255, 255, 0.788);
+	color: #000;
+	border: 1px solid #000;
+	font-weight: bold;
 }
 
 /* Choice Button Style on Hover */

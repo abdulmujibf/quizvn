@@ -51,7 +51,7 @@ monogatari.settings({
 	'Preload': true,
 
 	// Time interval between autosaves (In Minutes). Default: 0 (Off)
-	'AutoSave': 0,
+	'AutoSave': 5,
 
 	// Enable service workers; Default: true *
 	'ServiceWorkers': true,
@@ -151,7 +151,7 @@ monogatari.preferences({
 	'Resolution': '800x600',
 
 	// Speed at which dialog text will appear
-	'TextSpeed': 20,
+	'TextSpeed': 1,
 
 	// Speed at which the Auto Play feature will show the next statement
 	// It is measured in seconds and starts counting after the text is
