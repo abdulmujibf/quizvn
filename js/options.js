@@ -10,7 +10,7 @@
 'use strict';
 /* global Monogatari */
 
-const monogatari  = Monogatari.default;
+const monogatari = Monogatari.default;
 
 monogatari.settings({
 
@@ -133,7 +133,7 @@ monogatari.settings({
 });
 
 // Initial Settings
-monogatari.preferences ({
+monogatari.preferences({
 
 	// Initial Language for Multilanguage Games or for the Default GUI Language.
 	'Language': 'English',

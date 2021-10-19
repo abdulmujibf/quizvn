@@ -1,13 +1,12 @@
 {
 	"short_name": "Monogatari",
 	"name": "Monogatari Visual Novel",
-	"background_color": "#F7F7F7",
-	"theme_color": "#F7F7F7",
+	"background_color": "#940e0e",
+	"theme_color": "#940e0e",
 	"orientation": "landscape",
 	"display": "fullscreen",
 	"start_url": "index.html",
-	"icons": [
-		{
+	"icons": [{
 			"src": "assets/icons/icon_48x48.png",
 			"type": "image/png",
 			"sizes": "48x48"

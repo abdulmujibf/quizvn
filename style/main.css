@@ -17,6 +17,103 @@
  * ===========================
 **/
 
+.slide-in {
+	animation-name: ken-burns;
+	/* Name of the animation to use */
+	animation-duration: 1s;
+	/* 1 if it should only move once */
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes ken-burns {
+	0% {
+		transform: translateX(-500px);
+	}
+
+	100% {
+		transform: translateX(0px);
+	}
+}
+
+.slide-out {
+	animation-name: slide-rtls;
+	/* Name of the animation to use */
+	animation-duration: 1s;
+	/* 1 if it should only move once */
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes slide-rtls {
+	0% {
+		transform: translateX(0px);
+		-webkit-transform: translateX(0px);
+		-moz-transform: translateX(0px);
+		-ms-transform: translateX(0px);
+		-o-transform: translateX(0px);
+	}
+
+	100% {
+		transform: translateX(-500px);
+		-webkit-transform: translateX(-500px);
+		-moz-transform: translateX(-500px);
+		-ms-transform: translateX(-500px);
+		-o-transform: translateX(-500px);
+	}
+}
+
+.breath {
+	animation-name: breathe;
+	/* Name of the animation to use */
+	animation-duration: 2s;
+	/* 1 if it should only move once */
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	animation-delay: 0s;
+	-moz-transition: ease 1s all;
+	-o-transition: ease 1s all;
+	-webkit-transition: ease 1s all;
+	transition: ease 1s all;
+}
+
+@keyframes breathe {
+	0% {
+		transform: translateY(0px);
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		-o-transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(-2px);
+		-webkit-transform: translateY(-2px);
+		-moz-transform: translateY(-2px);
+		-ms-transform: translateY(-2px);
+		-o-transform: translateY(-2px);
+	}
+
+	100% {
+		transform: translateY(0px);
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		-ms-transform: translateY(0px);
+		-o-transform: translateY(0px);
+	}
+}
+
 /* General Style */
 body {}
 
@@ -92,7 +189,15 @@ button:hover {}
 }
 
 /* Character Name Style */
-[data-ui="who"] {}
+[data-ui="who"] {
+	background-color: white;
+	font-weight: bold;
+	width: 13%;
+	text-align: center;
+	border-radius: 5px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
 
 /* Style for Centered Text */
 [data-component="centered-dialog"] {}

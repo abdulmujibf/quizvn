@@ -10,8 +10,10 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
-	<meta http-equiv="Content-Security-Policy"
-		content="default-src 'self' https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval'">
+	<!-- <meta http-equiv="Content-Security-Policy"
+		content="default-src 'self' https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval' 'unsafe-inline'"> -->
+	<!-- <meta http-equiv="Content-Security-Policy"
+		content="default-src 'self' https:; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; script-src 'self' 'unsafe-eval'"> -->
 	<meta name="description" content="">
 	<!--Page description. No longer than 155 characters.-->
 	<meta name="keywords" content="">
@@ -140,16 +142,21 @@
 			<language-selection-screen></language-selection-screen>
 			<loading-screen></loading-screen>
 			<main-screen>
-				<div style="display: flex">
+				<div style="display: flex; flex-direction: column;">
 					<button data-action="start" icon="undefined" string="Start" tabindex="0">
 						<span class="undefined"></span>
 						<span data-string="Start">Start</span>
+					</button>
+					<button data-action="open-screen" data-open="load" icon="undefined" string="Load" tabindex="0">
+						<span class="undefined"></span>
+						<span data-string="Load">Load</span>
 					</button>
 				</div>
 				<!-- <main-menu></main-menu> -->
 			</main-screen>
 			<game-screen>
-				<dialog-log></dialog-log>
+				<!-- <button data-action="open-screen" data-open="save" tabindex="0">Save</button> -->
+				<!-- <dialog-log></dialog-log> -->
 				<text-box></text-box>
 				<!-- <quick-menu></quick-menu> -->
 			</game-screen>
@@ -162,5 +169,6 @@
 		</visual-novel>
 	</div>
 </body>
+
 
 </html>

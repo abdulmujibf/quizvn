@@ -16,6 +16,11 @@ monogatari.storage({
 		omset: '',
 		phoneNumber: '',
 		nasabah: '',
-		grup: ''
+		grup: '',
+		pre_question_1: '',
+		pre_question_2: '',
+		pre_question_3: '',
+		pre_question_4: '',
+		pre_question_5: '',
 	}
 });

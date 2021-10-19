@@ -12268,11 +12268,15 @@ img {
   width: 100%;
   height: 100%;
   position: absolute;
-  transition: all .5s
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
 }
 
 .modal--active {
-  display: block
+  display: block;
 }
 
 .modal--transparent {
@@ -14553,7 +14557,8 @@ text-box {
   grid-template-areas: "header header""side-image text";
   background-color: var(--main-color);
   min-height: 25%;
-  max-height: 25%;
+  max-height: 40%;
+  /* max-height: 25%; */
   overflow: hidden;
   width: 100%;
   z-index: 10;
@@ -14684,13 +14689,13 @@ text-box.side-image--unconstrained [data-content=side-image] {
   max-width: none
 }
 
-/* @media screen and (min-width:37.56255em) {
+@media screen and (min-width:37.56255em) {
 
-  text-box,
+  /* text-box,
   text-box:after {
     bottom: 2.5rem
-  }
-} */
+  } */
+}
 
 @media screen and (min-width:48em) {
   text-box {
