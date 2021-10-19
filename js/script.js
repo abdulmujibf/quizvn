@@ -86,7 +86,7 @@ monogatari.assets('scenes', {
 monogatari.characters({
 	'mc': {
 		name: 'Ibu Harta',
-		color: '#000aaa',
+		color: '#fff',
 		sprites: {
 			salam: "Salam.png",
 			kepo: "Kepo.png",
@@ -101,6 +101,8 @@ monogatari.script({
 		'show background class fadeIn',
 		'wait 1500',
 		'show character mc salam at left with slide-in',
+		"wait 1500",
+		"show character mc salam at left with breath",
 		// function () {
 		// 	const form = new FormData();
 		// 	console.log(form)

@@ -14548,6 +14548,7 @@ slot-container {
 }
 
 text-box {
+
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto minmax(70%, 1fr);
@@ -14563,6 +14564,7 @@ text-box {
   width: 100%;
   z-index: 10;
   text-align: left;
+  height: 109px;
   position: absolute;
   bottom: 0;
   color: #fff
