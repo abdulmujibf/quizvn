@@ -123,7 +123,7 @@ monogatari.script({
 				'Dialog': 'mc Apa {{player.name}} benar nama lengkap Sahabat? ',
 				'Yes': {
 					'Text': 'Benar',
-					'Do': 'jump Yes'
+					'Do': 'jump Yes',
 				},
 				'No': {
 					'Text': 'Salah',
@@ -695,7 +695,7 @@ monogatari.script({
 						}
 					});
 				},
-				'Warning': 'You must enter a name!'
+				'Warning': 'Invalid Nomor Telepon'
 			}
 		},
 		"jump nasabah"
@@ -767,7 +767,7 @@ monogatari.script({
 	],
 
 	'recordData': [
-		"Nama: {{player.name}}, Jenis Kelamin: {{player.gender}} Umur: {{player.age}}",
+		"Nama: {{player.name}}, Jenis Kelamin: {{player.gender}}, Umur: {{player.age}}",
 		"Provinsi: {{player.place}}, Kota / Kabupaten: {{player.kotaOrKabupaten}}, Kecamatan: {{player.kecamatan}}",
 		"Tipe usaha: {{player.tipeUsaha}}, Jenis Usaha: {{player.jenisUsaha}}, Lama Usaha: {{player.lamaUsaha}}",
 		"Pekerja: {{player.pekerja}}, Omset: {{player.omset}}, Nomor Telepon: {{player.phoneNumber}}",

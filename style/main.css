@@ -21,7 +21,9 @@
 body {}
 
 /* Simple Button styles*/
-button {}
+button {
+	margin: 5px;
+}
 
 /* Simple Button Style on Hover */
 button:hover {}
@@ -55,6 +57,9 @@ button:hover {}
 
 [data-component="choice-container"] {
 	flex-direction: row;
+	width: 100%;
+	height: 50%;
+	align-items: baseline;
 }
 
 /* Slot's Image Style */
@@ -73,7 +78,9 @@ button:hover {}
 **/
 
 /* Choice Buttons style */
-[data-component="choice-container"] button {}
+[data-component="choice-container"] button {
+	margin: 5px;
+}
 
 /* Choice Button Style on Hover */
 [data-component="choice-container"] button:hover {}
