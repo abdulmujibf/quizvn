@@ -2,6 +2,73 @@
 // const axios = require('../app');
 // import axios from "axios"
 
+function saveData(storage) {
+
+	// Destruct Object and Define Time
+	const date = new Date();
+	const {
+		name,
+		gender,
+		age,
+		place,
+		kotaOrKabupaten,
+		kecamatan,
+		tipeUsaha,
+		jenisUsaha,
+		lamaUsaha,
+		pekerja,
+		omset,
+		phoneNumber,
+		nasabah,
+		grup,
+		pre_question_1,
+		pre_question_2,
+		pre_question_3,
+		pre_question_4,
+		pre_question_5 } = storage.player
+
+	// Apend To Form
+	const form = new FormData()
+	form.append("name", name)
+	form.append("gender", gender)
+	form.append("age", age)
+	form.append("place", place)
+	form.append("kotaOrKabupaten", kotaOrKabupaten)
+	form.append("kecamatan", kecamatan)
+	form.append("tipeUsaha", tipeUsaha)
+	form.append("jenisUsaha", jenisUsaha)
+	form.append("lamaUsaha", lamaUsaha)
+	form.append("pekerja", pekerja)
+	form.append("omset", omset)
+	form.append("phoneNumber", phoneNumber)
+	form.append("nasabah", nasabah)
+	form.append("grup", grup)
+	form.append("pre_question_1", pre_question_1)
+	form.append("pre_question_2", pre_question_2)
+	form.append("pre_question_3", pre_question_3)
+	form.append("pre_question_4", pre_question_4)
+	form.append("pre_question_5", pre_question_5)
+	form.append("created_date", date.toLocaleString())
+
+	// Hit Post API PHP for add answer to DB
+	fetch("http://localhost:81/Test1/func.php?function=insert_data", {
+		method: 'post',
+		body: form
+	})
+		.then(res => {
+			console.log(res)
+			return res.json()
+		})
+		.then(data => {
+			console.log(data)
+			console.log(data)
+		})
+		.catch(err => {
+			console.log(err)
+		})
+	return true
+}
+
 // Define the messages used in the game.
 monogatari.action('message').messages({
 	'Help': {
@@ -68,7 +135,7 @@ monogatari.assets('sounds', {
 
 // Define the videos used in the game.
 monogatari.assets('videos', {
-	'modul-1': 'modul-1.mp4'
+	'modul-1': 'modul1.mp4'
 });
 
 // Define the images used in the game.
@@ -106,6 +173,7 @@ monogatari.script({
 		'show character mc salam at left with slide-in',
 		"wait 2000",
 		"show character mc salam at left with breath",
+		// "show video modul-1 immersive close controls",
 		// function () {
 		// 	const form = new FormData();
 		// 	console.log(form)
@@ -824,6 +892,7 @@ monogatari.script({
 		"hide character mc kepo with slide-down",
 		"wait 2000",
 		"show character mc kuis at right with slide-in-reverse",
+		"wait 2000",
 		"show character mc kuis at right with breath",
 		"wait 2000",
 		`mc Sebelum mulai pelatihannya, Ibu Harta mau adain kuis singkat untuk tahu seberapa Sahabat paham tentang topik yang akan dipelajari. Tolong jawab pertanyaan-pertanyaan ini dan tak perlu takut salah jawab. 📝
@@ -1107,6 +1176,10 @@ monogatari.script({
 		"wait 2000",
 		`mc Terima kasih banyak ya sudah mau gabung di pelatihan bersama Ibu Harta. Semoga yang udah diajarkan bisa berguna ya, Sahabat {{player.name}}. Semoga sehat selalu dan sampai ketemu lagi!
 		😀🥰😆`,
+		function () {
+			saveData(this.storage())
+			return true
+		},
 		// "Nama: {{player.name}}, Jenis Kelamin: {{player.gender}}, Umur: {{player.age}}",
 		// "Provinsi: {{player.place}}, Kota / Kabupaten: {{player.kotaOrKabupaten}}, Kecamatan: {{player.kecamatan}}",
 		// "Tipe usaha: {{player.tipeUsaha}}, Jenis Usaha: {{player.jenisUsaha}}, Lama Usaha: {{player.lamaUsaha}}",
@@ -1114,72 +1187,6 @@ monogatari.script({
 		// "Nasabah: {{player.nasabah}}, Grup: {{player.grup}}",
 		// "Question 1: {{player.pre_question_1}}, Question 2: {{player.pre_question_2}}, Question 3: {{player.pre_question_3}}",
 		// "question4: {{player.pre_question_4}}, Question 5: {{player.pre_question_5}}",
-		function () {
-
-			// Destruct Object and Define Time
-			const date = new Date();
-			const {
-				name,
-				gender,
-				age,
-				place,
-				kotaOrKabupaten,
-				kecamatan,
-				tipeUsaha,
-				jenisUsaha,
-				lamaUsaha,
-				pekerja,
-				omset,
-				phoneNumber,
-				nasabah,
-				grup,
-				pre_question_1,
-				pre_question_2,
-				pre_question_3,
-				pre_question_4,
-				pre_question_5 } = this.storage().player
-
-			// Apend To Form
-			const form = new FormData()
-			form.append("name", name)
-			form.append("gender", gender)
-			form.append("age", age)
-			form.append("place", place)
-			form.append("kotaOrKabupaten", kotaOrKabupaten)
-			form.append("kecamatan", kecamatan)
-			form.append("tipeUsaha", tipeUsaha)
-			form.append("jenisUsaha", jenisUsaha)
-			form.append("lamaUsaha", lamaUsaha)
-			form.append("pekerja", pekerja)
-			form.append("omset", omset)
-			form.append("phoneNumber", phoneNumber)
-			form.append("nasabah", nasabah)
-			form.append("grup", grup)
-			form.append("pre_question_1", pre_question_1)
-			form.append("pre_question_2", pre_question_2)
-			form.append("pre_question_3", pre_question_3)
-			form.append("pre_question_4", pre_question_4)
-			form.append("pre_question_5", pre_question_5)
-			form.append("created_date", date.toLocaleString())
-
-			// Hit Post API PHP for add answer to DB
-			fetch("http://localhost:81/Test1/func.php?function=insert_data", {
-				method: 'post',
-				body: form
-			})
-				.then(res => {
-					console.log(res)
-					return res.json()
-				})
-				.then(data => {
-					console.log(data)
-					console.log(data)
-				})
-				.catch(err => {
-					console.log(err)
-				})
-			return true
-		},
 		"end"
 	]
 });
