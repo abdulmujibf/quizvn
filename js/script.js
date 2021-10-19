@@ -824,7 +824,6 @@ monogatari.script({
 		"hide character mc kepo with slide-down",
 		"wait 2000",
 		"show character mc kuis at right with slide-in-reverse",
-		"wait 2000",
 		"show character mc kuis at right with breath",
 		"wait 2000",
 		`mc Sebelum mulai pelatihannya, Ibu Harta mau adain kuis singkat untuk tahu seberapa Sahabat paham tentang topik yang akan dipelajari. Tolong jawab pertanyaan-pertanyaan ini dan tak perlu takut salah jawab. 📝
